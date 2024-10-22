@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://o3ev25iqixn1"]
+
+[ext_resource type="Texture2D" uid="uid://dqsfj8rou2rmd" path="res://addons/scenetree_color_nodes/white_tex.tres" id="1_guqcj"]
+
+[sub_resource type="Gradient" id="Gradient_ppfw4"]
+offsets = PackedFloat32Array(0, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_62eno"]
+min_value = -1.0
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+emitting = false
+amount = 100
+lifetime = 0.7
+one_shot = true
+texture = ExtResource("1_guqcj")
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 1980)
+initial_velocity_min = 500.0
+initial_velocity_max = 700.0
+angular_velocity_min = 200.0
+angular_velocity_max = 500.0
+scale_amount_min = 6.0
+scale_amount_max = 6.0
+color = Color(1, 1, 1, 0.733333)
+color_ramp = SubResource("Gradient_ppfw4")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_62eno")
